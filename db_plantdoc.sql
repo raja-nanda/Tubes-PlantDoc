@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Jan 2021 pada 10.35
--- Versi server: 10.4.13-MariaDB
--- Versi PHP: 7.3.19
+-- Waktu pembuatan: 10 Jan 2021 pada 17.19
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -77,7 +77,11 @@ INSERT INTO `comments_post` (`id`, `post_id`, `user_id`, `comment_text`, `create
 (18, 4, 2, 'ayo jalan jalan raja', '2020-12-29 20:34:40', '2020-12-29 20:34:40'),
 (19, 5, 2, 'halo tio', '2020-12-29 20:36:48', '2020-12-29 20:36:48'),
 (21, 4, 2, 'ini komen raja yg ganti admin', '2020-12-31 01:56:00', '2020-12-31 01:57:55'),
-(22, 5, 3, 'pakar ah', '2020-12-31 02:11:44', '2020-12-31 02:11:44');
+(23, 6, 4, 'Hoo jadi gitu yaa', '2021-01-03 16:39:09', '2021-01-03 16:39:09'),
+(24, 6, 3, 'iyaa seperti itu ganteng', '2021-01-03 16:40:52', '2021-01-03 16:40:52'),
+(25, 6, 4, 'mancayyy', '2021-01-03 17:30:26', '2021-01-03 17:30:26'),
+(26, 6, 4, 'abis teken like bor', '2021-01-09 04:20:33', '2021-01-09 04:20:33'),
+(27, 6, 5, 'mancay', '2021-01-10 05:51:38', '2021-01-10 05:51:38');
 
 -- --------------------------------------------------------
 
@@ -99,10 +103,7 @@ CREATE TABLE `comment_forums` (
 --
 
 INSERT INTO `comment_forums` (`id`, `comment_forum`, `user_id`, `forum_id`, `created_at`, `updated_at`) VALUES
-(1, 'comment forum id 1 tes', 2, 1, '2021-01-04 01:46:51', '2021-01-04 01:46:51'),
-(3, 'halo admin saya komen di postingannya ya', 2, 5, '2021-01-06 16:54:37', '2021-01-06 16:54:37'),
-(5, 'halo tes edit', 2, 4, '2021-01-06 19:23:50', '2021-01-06 19:23:50'),
-(6, 'tes user 3 baru edit nih gais', 13, 5, '2021-01-07 02:33:35', '2021-01-07 02:33:35');
+(1, 'tinggal disiram', 3, 2, '2021-01-09 04:31:22', '2021-01-09 04:31:22');
 
 -- --------------------------------------------------------
 
@@ -267,9 +268,8 @@ CREATE TABLE `forums` (
 --
 
 INSERT INTO `forums` (`id`, `forumtext`, `tittle_forum`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'tes tanaman 1 edit', 'tes', 2, '2021-01-04 01:09:03', '2021-01-04 01:09:03'),
-(4, 'tanaman ini  untuk pos forum 3', 'tanaman hijau', 3, '2021-01-06 04:05:23', '2021-01-06 04:05:23'),
-(5, 'ini yang baru', 'test post baru', 1, '2021-01-06 12:06:58', '2021-01-06 12:06:58');
+(1, 'forum 1 post', 'forum 1', 1, '2021-01-09 02:57:26', '2021-01-09 02:57:26'),
+(2, 'Bagaimana cara menyiram tanaman obat', 'Tanaman Obat', 4, '2021-01-09 04:30:45', '2021-01-09 04:30:45');
 
 -- --------------------------------------------------------
 
@@ -306,12 +306,13 @@ CREATE TABLE `like_post` (
 --
 
 INSERT INTO `like_post` (`id`, `user_id`, `post_id`, `like_status`, `created_at`, `updated_at`) VALUES
-(1, 2, 5, 1, '2021-01-03 08:19:53', '2021-01-03 08:19:53'),
-(40, 1, 1, 0, '2021-01-03 16:41:39', '2021-01-03 16:41:39'),
-(42, 1, 2, 1, '2021-01-03 18:10:10', '2021-01-03 18:10:10'),
-(43, 3, 2, 0, '2021-01-03 18:20:57', '2021-01-03 18:20:57'),
-(44, 2, 2, 0, '2021-01-04 18:39:58', '2021-01-04 18:39:58'),
-(45, 3, 4, 0, '2021-01-05 11:05:18', '2021-01-05 11:05:18');
+(1, 1, 1, 1, NULL, NULL),
+(2, 2, 4, 1, '2020-12-29 02:15:13', '2020-12-29 02:15:13'),
+(4, 1, 5, 1, '2021-01-03 14:41:36', '2021-01-03 14:41:36'),
+(5, 2, 6, 1, '2021-01-03 16:32:35', '2021-01-03 16:32:35'),
+(6, 2, 6, 1, '2021-01-03 17:31:25', '2021-01-03 17:31:25'),
+(7, 4, 6, 1, '2021-01-09 04:20:19', '2021-01-09 04:20:19'),
+(8, 5, 6, 1, '2021-01-10 05:51:24', '2021-01-10 05:51:24');
 
 -- --------------------------------------------------------
 
@@ -377,7 +378,7 @@ INSERT INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_class
 (14, 1, 'Hooks', '', '_self', 'voyager-hook', NULL, 5, 13, '2020-12-21 20:26:51', '2020-12-21 20:26:51', 'voyager.hooks', NULL),
 (15, 1, 'Comments Posts', '', '_self', NULL, NULL, NULL, 15, '2020-12-28 18:20:53', '2020-12-28 18:20:53', 'voyager.comments-post.index', NULL),
 (16, 2, 'Beranda', '/', '_self', NULL, '#000000', NULL, 1, '2020-12-30 18:21:48', '2020-12-30 18:23:44', NULL, ''),
-(17, 2, 'Forum', '/forum', '_self', NULL, '#000000', NULL, 2, '2020-12-30 18:22:44', '2021-01-03 18:33:43', NULL, ''),
+(17, 2, 'Forum', '#', '_self', NULL, '#000000', NULL, 2, '2020-12-30 18:22:44', '2020-12-30 18:23:44', NULL, ''),
 (18, 2, 'Jenis Tanaman', '', '_self', NULL, '#000000', NULL, 3, '2020-12-30 18:23:15', '2020-12-30 18:23:44', NULL, ''),
 (19, 2, 'Tanaman Hias', '/tanaman-hias', '_self', NULL, '#000000', 18, 1, '2020-12-30 18:23:39', '2020-12-30 18:23:44', NULL, ''),
 (20, 2, 'Tanaman Obat', '/tanaman-obat', '_self', NULL, '#000000', 18, 2, '2020-12-30 18:24:14', '2020-12-30 18:24:24', NULL, ''),
@@ -428,9 +429,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2018_03_16_000000_make_settings_value_nullable', 1),
 (27, '2019_08_19_000000_create_failed_jobs_table', 1),
 (28, '2018_06_30_113500_create_comments_table', 2),
-(38, '2021_01_03_115535_create_forums_table', 3),
-(39, '2021_01_03_120050_create_like_forums_table', 3),
-(40, '2021_01_03_120451_create_comment_forums_table', 3);
+(29, '2021_01_03_115535_create_forums_table', 3),
+(30, '2021_01_03_120050_create_like_forums_table', 3),
+(31, '2021_01_03_120451_create_comment_forums_table', 3);
 
 -- --------------------------------------------------------
 
@@ -648,11 +649,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `author_id`, `category_id`, `title`, `seo_title`, `excerpt`, `body`, `image`, `slug`, `meta_description`, `meta_keywords`, `status`, `featured`, `created_at`, `updated_at`) VALUES
-(1, 1, 2, 'Lorem Ipsum Post', NULL, 'This is the excerpt for the Lorem Ipsum Post', '<p>This is the body of the lorem ipsum post</p>', 'posts/post1.jpg', 'lorem-ipsum-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2020-12-21 20:26:46', '2020-12-30 05:19:30'),
-(2, 0, 1, 'My Sample Post', NULL, 'This is the excerpt for the sample Post', '<p>This is the body for the sample post, which includes the body.</p>\r\n                <h2>We can use all kinds of format!</h2>\r\n                <p>And include a bunch of other stuff.</p>', 'posts/post2.jpg', 'my-sample-post', 'Meta Description for sample post', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2020-12-21 20:26:46', '2020-12-21 20:26:46'),
-(3, 0, 2, 'Latest Post', NULL, 'This is the excerpt for the latest post', '<p>This is the body for the latest post</p>', 'posts/post3.jpg', 'latest-post', 'This is the meta description', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2020-12-21 20:26:46', '2020-12-21 20:26:46'),
-(4, 0, 2, 'Yarr Post', NULL, 'Reef sails nipperkin bring a spring upon her cable coffer jury mast spike marooned Pieces of Eight poop deck pillage. Clipper driver coxswain galleon hempen halter come about pressgang gangplank boatswain swing the lead. Nipperkin yard skysail swab lanyard Blimey bilge water ho quarter Buccaneer.', '<p>Swab deadlights Buccaneer fire ship square-rigged dance the hempen jig weigh anchor cackle fruit grog furl. Crack Jennys tea cup chase guns pressgang hearties spirits hogshead Gold Road six pounders fathom measured fer yer chains. Main sheet provost come about trysail barkadeer crimp scuttle mizzenmast brig plunder.</p>\r\n<p>Mizzen league keelhaul galleon tender cog chase Barbary Coast doubloon crack Jennys tea cup. Blow the man down lugsail fire ship pinnace cackle fruit line warp Admiral of the Black strike colors doubloon. Tackle Jack Ketch come about crimp rum draft scuppers run a shot across the bow haul wind maroon.</p>\r\n<p>Interloper heave down list driver pressgang holystone scuppers tackle scallywag bilged on her anchor. Jack Tar interloper draught grapple mizzenmast hulk knave cable transom hogshead. Gaff pillage to go on account grog aft chase guns piracy yardarm knave clap of thunder.</p>', 'posts/post4.jpg', 'yarr-post', 'this be a meta descript', 'keyword1, keyword2, keyword3', 'PUBLISHED', 0, '2020-12-21 20:26:46', '2020-12-21 20:26:46'),
-(5, 1, 1, 'Pagi Ini, Jokowi Dijadwalkan Lantik 6 Menteri Baru Hasil Reshuffle', 'Pagi Ini, Jokowi Dijadwalkan Lantik 6 Menteri Baru Hasil Reshuffle', 'Presiden Joko Widodo akan melantik enam menteri baru Kabinet Indonesia Maju, Rabu (23/12/2020) pagi. Pelantikan dijadwalkan pukul 9.30 WIB di Istana Negara, Jakarta.', '<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\">Padang, mastaonline.com - Presiden Joko Widodo akan melantik enam menteri baru Kabinet Indonesia Maju, Rabu (23/12/2020) pagi. Pelantikan dijadwalkan pukul 9.30 WIB di Istana Negara, Jakarta. \"Pelantikan akan dilaksanakan Insya Allah pada besok pagi,\" kata Jokowi usai mengumumkan enam menteri baru di Istana Merdeka, Jakarta, Selasa (22/12/2020).</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\">Mereka yakni Menteri Sosial, Menteri Kelautan dan Perikanan, Menteri Kesehatan, Menteri Pariwisata dan Ekonomi Kreatif, Menteri Agama, serta Menteri Perdagangan. Kepala Sekretariat Presiden (Kasetpres) Heru Budi Hartono mengatakan, selain melantik enam menteri, Jokowi juga akan melantik lima orang wakil menteri. Namun, ia tak menyebutkan secara rinci nama-nama wakil menteri tersebut.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\">\"Semua wamen dilantik juga bersama para menteri,\" ujar Heru saat dihubungi, Rabu (23/12/2020).</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\">Bersamaan dengan itu, Jokowi juga akan melantik Kepala Badan Narkotika Nasional (BNN) serta Kepala Badan Restorasi Gambut dan Mangrove.</p>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\">Berikut enam menteri baru Kabinet Indonesia Maju yang akan dilantik Jokowi:</p>\r\n<ol style=\"box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: #000000; font-family: calibri, calib, \'Open Sans\', sans-serif; font-size: 16px;\">\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Sosial Tri Rismaharini menggantikan Juliari P Batubara</li>\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Pariwisata dan Ekonomi Kreatif Sandiaga Salahudin Uno menggantikan Wishnutama Kusubandio</li>\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Kesehatan Budi Gunawan Sadikin menggantikan Terawan Agus Putranto</li>\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Agama Yaqut Cholil Qoumas menggantikan Fachrul Razi</li>\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Kelautan dan Perikanan Sakti Wahyu Trenggono menggantikan Edhy Prabowo</li>\r\n<li style=\"box-sizing: border-box; text-align: justify;\">Menteri Perdagangan Muhammad Lutfi menggantikan Agus Suparmanto.</li>\r\n</ol>\r\n<p style=\"box-sizing: border-box; margin: 0px 0px 20px; font-family: \'Open Sans\', sans-serif; color: #000000; font-size: 16px;\"><br style=\"box-sizing: border-box;\" />Artikel ini telah tayang di&nbsp;<a style=\"box-sizing: border-box; color: #78818b; text-decoration-line: none; transition: all 200ms ease-in 0s;\" href=\"https://www.kompas.com/\">Kompas.com</a> dengan judul \"Pagi Ini, Jokowi Dijadwalkan Lantik 6 Menteri Baru Hasil Reshuffle\"</p>', 'posts\\December2020\\ZsuCUzjqDX5Qa70JZip1.jpg', 'pagi-ini-jokowi-dijadwalkan-lantik-6-menteri-baru-hasil-reshuffle', 'Presiden Joko Widodo akan melantik enam menteri baru Kabinet Indonesia Maju, Rabu (23/12/2020) pagi. Pelantikan dijadwalkan pukul 9.30 WIB di Istana Negara, Jakarta.', 'presiden, jokowi, kabinet, 2020, menteri baru 2020', 'PUBLISHED', 1, '2020-12-26 17:29:52', '2020-12-26 17:29:52');
+(5, 1, 1, 'Khasiat baik dari Tanaman Kelor', 'Khasiat baik dari Tanaman Kelor', 'Manfaat daun kelor bagi kesehatan tidak perlu diragukan lagi. Tanaman ini memang sudah lama dikenal sebagai tanaman herbal yang baik untuk menjaga tekanan darah hingga mencegah kanker. Tak hanya itu, daun kelor ternyata memiliki beragam manfaat lainnya.', '<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>Manfaat daun kelor bagi kesehatan tidak perlu diragukan lagi. Tanaman ini memang sudah lama dikenal sebagai tanaman herbal yang baik untuk menjaga tekanan darah hingga mencegah kanker. Tak hanya itu, daun kelor ternyata memiliki beragam manfaat lainnya.</strong></p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Daun kelor (<em>Moringa oleifera</em>) merupakan tanaman tropis yang sejak lama telah dimanfaatkan sebagai pengobatan tradisional. Tanaman ini dapat dikenali dari bentuk daunnya yang berukuran kecil. Pohon kelor juga mudah tumbuh dan bisa hidup di tanah yang tidak terlalu subur.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Daun kelor dapat diolah menjadi jamu, teh herbal, hingga suplemen. Tak sedikit pula orang yang menggunakan daun kelor sebagai bahan masakan. Dalam pengobatan tradisional, daun kelor dipercaya berkhasiat untuk mengobati&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/diabetes\" target=\"_blank\" rel=\"noopener\">diabetes</a>, nyeri sendi, infeksi bakteri, hingga kanker.</p>\r\n<h3 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>Kandungan Nutrisi Daun Kelor</strong></h3>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Di dalam sekitar 2 gram daun kelor, terkandung 14 kalori dan beragam nutrisi berikut ini:</p>\r\n<ul style=\"color: #3b3738; font-family: LatoWeb, sans-serif; font-size: 16px;\">\r\n<li>2 gram protein</li>\r\n<li>1,8&ndash;2 gram karbohidrat</li>\r\n<li>0,8 miligram zat besi</li>\r\n<li>8,8 miligram magnesium</li>\r\n<li>70 miligram&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/ketahui-manfaat-kalium-bagi-tubuh\" target=\"_blank\" rel=\"noopener\">kalium</a></li>\r\n<li>38&ndash;40 miligram kalsium</li>\r\n<li>11 miligram vitamin C</li>\r\n<li>600 IU&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/melihat-lebih-jauh-tentang-manfaat-vitamin-a\" target=\"_blank\" rel=\"noopener\">vitamin A</a></li>\r\n<li>8,5 mikrogram folat</li>\r\n</ul>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Selain beragam nutrisi di atas, daun kelor juga mengandung vitamin B, serat, fosfor, selenium,&nbsp;<em>zinc</em>, dan tembaga. Daun kelor juga mengandung banyak&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/ketahui-manfaat-antioksidan-dan-sumbernya\" target=\"_blank\" rel=\"noopener\">antioksidan</a>, seperti&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/mari-kenali-beberapa-jenis-dan-manfaat-polifenol\" target=\"_blank\" rel=\"noopener\">polifenol</a>.</p>\r\n<h3 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>Manfaat Daun Kelor bagi Kesehatan</strong></h3>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Telah disebutkan sebelumnya bahwa daun kelor dikenal sebagai salah satu tanaman herbal yang baik untuk kesehatan. Berikut ini adalah beragam manfaat daun kelor yang dapat Anda peroleh:</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>1. Menurunkan kadar gula darah</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Sebuah penelitian menemukan bahwa daun kelor terlihat dapat menurunkan kadar gula darah dan meningkatkan efektivitas kerja hormon insulin. Manfaat ini baik untuk mencegah diabetes dan terjadinya&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/tidak-tertutup-kemungkinan-Anda-mengalami-resistensi-insulin\" target=\"_blank\" rel=\"noopener\">resistensi insulin</a>.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Akan tetapi, manfaat daun kelor sebagai pengobatan diabetes pada manusia masih perlu diteliti lebih lanjut.</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>2. Mengatasi peradangan</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Peradangan merupakan respons alami tubuh terhadap infeksi atau cedera. Namun, Anda bisa mengonsumsi daun kelor untuk meredakan peradangan yang dialami. Ekstrak daun kelor dipercaya mengandung zat yang dapat mengurangi peradangan.</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>3. Mengontrol tekanan darah</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Daun kelor banyak mengandung kalium dan antioksidan. Berkat kandungan tersebut, tanaman ini diketahui bermanfaat untuk menurunkan tekanan darah dan menjaganya tetap stabil sehingga dapat mencegah&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/hipertensi\" target=\"_blank\" rel=\"noopener\">hipertensi</a>.</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>4. Memelihara kesehatan dan fungsi otak</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Kandungan antioksidan di dalam daun kelor juga bermanfaat untuk menjaga kesehatan dan fungsi otak. Beberapa riset menunjukkan bahwa asupan antioksidan yang tercukupi dapat menurunkan risiko penyakit&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/penyakit-alzheimer\" target=\"_blank\" rel=\"noopener\">Alzheimer</a>&nbsp;dan&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/penyakit-parkinson\" target=\"_blank\" rel=\"noopener\">penyakit Parkinson</a>.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Daun kelor juga dipercaya baik untuk mendukung kinerja otak dan meningkatkan memori.</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>5. Menghambat pertumbuhan sel kanker</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Ekstrak daun dan kulit batang pohon kelor terbukti efektif menghambat pertumbuhan sel kanker, seperti kanker payudara, pankreas, dan usus besar. Manfaat daun kelor tersebut diduga berkat kandungan antioksidannya yang dapat mencegah kerusakan sel akibat&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/radikal-bebas-pemicu-penyakit-kronis\" target=\"_blank\" rel=\"noopener\">radikal bebas</a>.</p>\r\n<h4 style=\"font-size: 17px; font-stretch: normal; line-height: 1.32; letter-spacing: -0.3px; margin-top: 32px; margin-bottom: 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\"><strong>6. Meningkatkan daya tahan tubuh</strong></h4>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Berdasarkan penelitian di laboratorium, ekstrak daun kelor diketahui dapat melindungi tubuh dari berbagai jenis kuman, seperti&nbsp;<em>Salmonella typhi</em>&nbsp;penyebab&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/tifus\" target=\"_blank\" rel=\"noopener\">tifus</a>,&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/e-coli\" target=\"_blank\" rel=\"noopener\"><em>Escherichia coli</em></a>&nbsp;penyebab diare, dan&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/kenali-bahaya-bakteri-staphylococcus-aureus\" target=\"_blank\" rel=\"noopener\"><em>Staphylococcus aureus</em></a>&nbsp;penyebab infeksi kulit.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Daun kelor juga diketahui dapat melawan virus, terutama jenis virus herpes simplex (HSV).</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Selain berbagai manfaat di atas, daun kelor juga dipercaya baik untuk mengurangi kolesterol, mengatasi disfungsi ereksi, dan mencegah kambuhnya gejala asma.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Sayangnya, berbagai manfaat daun kelor tersebut masih perlu diteliti lebih lebih lanjut terkaitnya efektivitasnya pada manusia. Oleh karena itu, Anda dianjurkan untuk berkonsultasi&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/cari-dokter/ahli-gizi\" target=\"_blank\" rel=\"noopener\">ke dokter</a>&nbsp;terlebih dahulu sebelum menggunakan daun kelor sebagai pengobatan penyakit tertentu.</p>\r\n<p style=\"font-size: 16px; margin: 10px 0px; color: #3b3738; font-family: LatoWeb, sans-serif;\">Perlu diingat pula bahwa sejauh ini daun kelor belum terbukti aman untuk dikonsumsi oleh ibu hamil. Daun kelor juga sebaiknya tidak dikonsumsi apabila Anda sedang menjalani pengobatan tertentu, karena berisiko menimbulkan efek&nbsp;<a style=\"text-decoration-line: none; color: #3570d2;\" href=\"https://www.alodokter.com/dampak-interaksi-obat-kepada-tubuh-anda\" target=\"_blank\" rel=\"noopener\">interaksi obat</a>.</p>', 'posts\\January2021\\bThUWAlt7Gk9SbMBY4Km.jpg', 'khasiat-baik-dari-tanaman-kelor', 'Manfaat daun kelor bagi kesehatan tidak perlu diragukan lagi. Tanaman ini memang sudah lama dikenal sebagai tanaman herbal yang baik untuk menjaga tekanan darah hingga mencegah kanker. Tak hanya itu, daun kelor ternyata memiliki beragam manfaat lainnya.', 'kelor, tanaman, obat, khasiat', 'PUBLISHED', 1, '2020-12-26 17:29:52', '2021-01-03 16:07:24'),
+(6, 1, 2, 'Cara Merawat Aglonema Tanaman Hits Masa Kini', 'Cara Merawat Aglonema', 'Di masa pandemi ini, banyak masyarakat yang menekuni hobi berkebun. Banyak orang yang kini mulai mengoleksi tanaman-tanaman hias. Selain dapat menghilangkan kejenuhan, keberadaan tanaman di rumah juga membuat udara jadi lebih segar.\r\n\r\nDari sekian tanaman hias yang naik daun, salah satunya adalah aglonema. Aglonema, juga sering disebut \'Chinese evergreens\', berasal dari daerah tropis dan sub tropis di Asia. Daya tariknya terletak pada warna daunnya yang bervariasi, mulai dari daun hijau pekat, keperak-perakan, dan merah yang memikat.', '<p style=\"box-sizing: border-box; margin-top: 0px; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Di masa pandemi ini, banyak masyarakat yang menekuni hobi berkebun. Banyak orang yang kini mulai mengoleksi tanaman-<a style=\"box-sizing: border-box; background-color: transparent; color: #ff3300; text-decoration-line: none;\" title=\"tanaman hias\" href=\"https://www.liputan6.com/lifestyle/read/4391167/rekomendasi-6-tempat-jual-pot-unik-untuk-tanaman-hias\">tanaman hias</a>. Selain dapat menghilangkan kejenuhan, keberadaan tanaman di rumah juga membuat udara jadi lebih segar.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Dari sekian tanaman hias yang naik daun, salah satunya adalah aglonema. Aglonema, juga sering disebut \'Chinese evergreens\', berasal dari daerah tropis dan sub tropis di Asia. Daya tariknya terletak pada warna daunnya yang bervariasi, mulai dari daun hijau pekat, keperak-perakan, dan merah yang memikat.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Tanaman aglaonema atau&nbsp;<a style=\"box-sizing: border-box; background-color: transparent; color: #ff3300; text-decoration-line: none;\" title=\"aglonema\" href=\"https://hot.liputan6.com/read/4349135/12-jenis-aglonema-yang-cocok-untuk-hiasan-rumah-mudah-merawatnya\">aglonema</a>&nbsp;berasal dan tumbuh liar di hutan hujan Asia Tenggara, serta banyak ditemukan di Indonesia, Thailand dan Malaysia. Kabarnya, nama Aglaonema diambil dari Bahasa Yunani Kuno yang berarti &lsquo;tanaman mengkilap.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Di Indonesia, aglaonema kerap disebut sebagai &lsquo;sri rejeki&rsquo;. Sesuai namanya, tanaman ini dipercaya bisa memberikan energi positif dan mendatangkan rezeki. Tanaman hias aglaonema punya karakteristik yang mudah tumbuh. Meski begitu, Anda harus&nbsp;merawatnya dengan benar agar proses perkembangan dan pertumbuhannya bisa maksimal.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Dilansir dari laman Joy Us Garden, 2 November 2020, setidaknya ada enam cara merawat tanaman aglaonema yang bisa Anda praktikkan di rumah.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\"><span style=\"box-sizing: border-box; font-weight: bold;\">1. Gunakan tanah organik</span></p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Tanah organik sangat disarankan sebagai media tanam aglonema. Alasannya, tanah organik bisa membuat aglaonema cepat tumbuh subur dan sehat. Selain itu, cek rutin kualitas tanahnya. Kalau kondisi tanah telah menggumpal, kering, atau terlalu basah, gantilah dengan tanah yang baru. Tanah pot yang berbasis gambut dengan perlit ekstra adalah pilihan yang dianjurkan.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\"><span style=\"box-sizing: border-box; font-weight: bold;\">2. Jangan terlalu sering disiram</span></p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Tanaman hias mudah sekali tumbuh, sehingga Anda pun tak perlu menyiramnya terlalu sering. Yang terpenting pastikan ketersediaan nutrisi dan airnya cukup selama musim kering, dengan menyiram&nbsp;<a style=\"box-sizing: border-box; background-color: transparent; color: #ff3300; text-decoration-line: none;\" title=\"aglonema\" href=\"https://www.liputan6.com/regional/read/4372822/janda-bolong-dan-aglonema-lipstik-bakal-makin-moncer-di-batam\">aglonema</a>&nbsp;setiap dua sampai tiga kali dalam sepekan.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Namun jika musim penghujan atau musim dingin tiba, Anda harus mengurangi asupan air dengan hanya menyiramnya setiap satu hingga dua kali dalam sepekan. Selain itu, pakailah air bersih untuk menyiram bagian tanaman dan basahi daunnya untuk membersihkannya dari debu hingga bakteri.3. Jauhkan paparan sinar matahari langsung</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\"><span style=\"box-sizing: border-box; font-weight: bold;\">3. Hindari suhu rendah atau dingin</span></p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Aglaonema ternyata punya toleransi yang rendah terhadap suhu yang dingin. Tanaman hias ini tidak suka tumbuh dalam suhu udara di bawah 16 derajat Celsius.</p>\r\n<p style=\"box-sizing: border-box; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px;\">Jadi, usahakan untuk memberikan kenyamanan dan kelembapan udara yang baik meskipun tanaman aglaonema ditempatkan di dalam ruangan.</p>\r\n<div class=\"article-content-body__item-media\" style=\"box-sizing: border-box; color: #444444; font-family: AcuminPro, arial, helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: #ffffff; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;\">\r\n<figure id=\"gallery-image-2825154\" class=\"read-page--photo-gallery--item\" style=\"box-sizing: border-box; display: block; margin: 0px 0px 20px; padding: 0px; clear: both;\" data-photo-gallery-page=\"2\" data-image=\"https://cdn0-production-images-kly.akamaized.net/kvPsh8mIPsd7bTXSAufl2F5cEhM=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2825154/original/027511300_1560159154-margarita-terekhova-669946-unsplash.jpg\" data-description=\"Ilustrasi tanaman hias (unsplash.com/Margarita Terekhova)\" data-title=\"Tanaman Hias\" data-share-url=\"https://www.liputan6.com/lifestyle/read/4399116/6-cara-merawat-aglonema-tanaman-hias-yang-lagi-hits?photo=2825154\" data-photo-id=\"?photo=2825154\" data-copy-link-url=\"https://www.liputan6.com/lifestyle/read/4399116/6-cara-merawat-aglonema-tanaman-hias-yang-lagi-hits\" data-component=\"desktop:read-page:photo-gallery:item\" data-component-name=\"desktop:read-page:photo-gallery:item\">\r\n<div class=\"read-page--photo-gallery--item__content js-gallery-content\" style=\"box-sizing: border-box; overflow: hidden; position: relative; border-radius: 8px; background-color: #dddddd;\">&nbsp;</div>\r\n</figure>\r\n</div>', 'posts\\January2021\\myCpaRoN9lGvm8UVEjMC.webp', 'cara-merawat-aglonema-tanaman-hits-masa-kini', 'Tanaman aglaonema atau aglonema berasal dan tumbuh liar di hutan hujan Asia Tenggara, serta banyak ditemukan di Indonesia, Thailand dan Malaysia. Kabarnya, nama Aglaonema diambil dari Bahasa Yunani Kuno yang berarti ‘tanaman mengkilap.', 'aglonema, hias, bunga, hits', 'PUBLISHED', 0, '2021-01-03 16:26:23', '2021-01-09 02:39:01');
 
 -- --------------------------------------------------------
 
@@ -788,14 +786,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$mk3CEPyaVbDSOga8MHvrjO.CuPH5rkDU0MzO/M2S4RJ6rsniYMIlS', '1W39GWYQbGULxPw7IDwSOP7gtZe9pYfjcGXKMKj89sGlDzhW8w3g2SXvgDqA', NULL, '2020-12-21 20:26:44', '2020-12-21 20:26:44'),
-(2, 2, 'rizkyujiansyah', 'rizkyujiansyah96@gmail.com', 'users\\December2020\\FKnVaidOpP8NqTi3RMmy.jpg', NULL, '$2y$10$QCpv7f7AnMdzIGtbT2EbF.IdwxYLxDM1f/w3B7OrgDD0k08xY8hz.', NULL, '{\"locale\":\"id\"}', '2020-12-21 20:40:07', '2020-12-29 01:03:36'),
+(1, 1, 'Admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$mk3CEPyaVbDSOga8MHvrjO.CuPH5rkDU0MzO/M2S4RJ6rsniYMIlS', 'fupfZnypjNygCNJx2YESnFgVX1z1R6o0EmwKjzexVvhclsvl7JiJktZ6M2I6', NULL, '2020-12-21 20:26:44', '2020-12-21 20:26:44'),
 (3, 3, 'Pakar', 'Pakar@gmail.com', 'users\\December2020\\o2oDpOMXIGh6dhdFSNvP.png', NULL, '$2y$10$uMTlMHugBxhGRt6zp2zA2Oij75qZpYhz2GJa6kc.LIxxR9Bp7efJS', NULL, '{\"locale\":\"id\"}', '2020-12-31 02:03:58', '2020-12-31 02:03:58'),
-(4, 3, 'Pakar Hiasan', 'pakarhiasan@gmail.com', 'users/default.png', NULL, '$2y$10$VCSwDL7u9oLZO3FZEq9gEuW8T4jJVMhlfQEdHHQFsYwMlBvTgmIwy', NULL, '{\"locale\":\"id\"}', '2020-12-31 20:05:51', '2020-12-31 20:05:51'),
-(5, 2, 'user', 'user@gmail.com', 'users/default.png', NULL, '$2y$10$Xw8JYdE4.NvayLiyFNa1n./4z6rnBe6AKkBxw6vY8Ot80/AOVUzD.', NULL, '{\"locale\":\"en\"}', NULL, '2021-01-07 02:12:12'),
-(6, 2, 'user1', 'user1@gmail.com', 'users/default.png', NULL, '$2y$10$2yDdTCuT8pUvP/aujQ48FuglhcSAPbjFY9E7IXjOOp.RPtVQzwnKS', NULL, '{\"locale\":\"en\"}', NULL, '2021-01-07 02:12:27'),
-(8, 2, 'user2', 'user2@gmail.com', 'users/default.png', NULL, '$2y$10$OQHGLis/QnmdCJpdaq80.ej6B3I76Mpyjex0Xdniswg8eJfoIzftW', NULL, '{\"locale\":\"en\"}', NULL, '2021-01-07 02:12:40'),
-(13, 2, 'user3', 'user3@gmail.com', 'users/default.png', NULL, '$2y$10$Ui9frDu9YzZRhR6gOmej9O2ldnGawYk4BIYLNIPvoNm8IVexpkYa.', NULL, NULL, '2021-01-07 02:31:33', '2021-01-07 02:31:33');
+(4, 2, 'Raja Ganteng', 'rajakaseppisaneuy@gmail.com', 'users\\January2021\\tAxxtPE12ngCaikXNVGU.JPG', NULL, '$2y$10$BsgIN0Ipf2VepyIjfi2HrOWEi4CzOsfvH3gpz0bo7ra7.0IIbvPcC', NULL, '{\"locale\":\"id\"}', '2021-01-03 16:37:51', '2021-01-09 04:19:43'),
+(5, 2, 'raja', 'raja@gmail.com', 'users/default.png', NULL, '$2y$10$Q3IX.WIS1sOeuNQfW.5lzOJem5sDk7LRb16dD4z9vbxwjRni9Xrku', NULL, '{\"locale\":\"id\"}', '2021-01-10 05:45:28', '2021-01-10 05:45:28');
 
 -- --------------------------------------------------------
 
@@ -979,13 +973,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT untuk tabel `comments_post`
 --
 ALTER TABLE `comments_post`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `comment_forums`
 --
 ALTER TABLE `comment_forums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `data_rows`
@@ -1009,7 +1003,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `like_forums`
@@ -1021,7 +1015,7 @@ ALTER TABLE `like_forums`
 -- AUTO_INCREMENT untuk tabel `like_post`
 --
 ALTER TABLE `like_post`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `menus`
@@ -1039,7 +1033,7 @@ ALTER TABLE `menu_items`
 -- AUTO_INCREMENT untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `pages`
@@ -1057,7 +1051,7 @@ ALTER TABLE `permissions`
 -- AUTO_INCREMENT untuk tabel `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
@@ -1081,7 +1075,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

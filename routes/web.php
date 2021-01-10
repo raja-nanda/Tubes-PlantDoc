@@ -22,11 +22,10 @@ Route::get('/registrasi', function () {
 });
 
 
-Route::get('/',[HomeController::class, 'index']);
-// Route::get('/post/{slug}',[HomeController::class,'show']);
+Route::get('/',[HomeController::class, 'index']); 
 Route::get('/post/{slug}',[HomeController::class,'show']);
 Route::post('/post-comment',[HomeController::class,'PostComment'])->name("saveComment");
-Route::post('/post-like',[HomeController::class,'PostLike'])->name("PostLike");
+Route::post('/post-like',[HomeController::class,'PostLike'])->name("PostLike");//untuk like postingan tanaman 
 Route::put('/put-comment',[HomeController::class,'UpdateComment'])->name("updateComment");
 Route::get('/del-comment',[HomeController::class,'DeleteComment'])->name("deleteComment");
 
@@ -47,9 +46,6 @@ Route::post('/forum-post-comment',[CommentForumsController::class,'store'])->nam
 Route::post('/forum-edit-comment',[CommentForumsController::class,'edit_comment'])->name("forum_edit_comment");
 Route::get('/forum-delete-comment',[CommentForumsController::class,'delete_comment'])->name("forum_delete_comment");
 
-// Route::get('/forum', function () {
-//     return view('users.Show.forum_index');
-// });
 
 // registrasi
 Route::post('/registrasi/post',[HomeController::class,'registrasi'])->name("registrasi");

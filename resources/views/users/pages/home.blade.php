@@ -131,15 +131,7 @@
                 <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
                     <p>
                         Dengan adanya PlantDoc ini diharapkan dapat memudahkan para pecinta tanaman dalam merawat tanaman mereka.
-                    <!-- </p>
-                    <ul>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                            consequa</li>
-                        <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate
-                            velit</li>
-                        <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in</li>
-                    </ul> -->
+                    
                     <p class="font-italic">
                         "When evironment changes, theres must be corresponding change in life"
                     </p>

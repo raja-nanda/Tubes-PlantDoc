@@ -93,7 +93,7 @@ class HomeController extends Controller
     // menampikan postingan dengan komentar
     public function show($slug){
 
-        $page= Post::where('slug',$slug)->first();
+        $page= Post::where('slug',$slug)->first();//ambil data post dari data parameter slug
         $like_posts=  DB::table('like_post')
         ->select('like_post.id as id_like','like_post.like_status','like_post.post_id')
         ->where('like_post.post_id','=',$page->id)

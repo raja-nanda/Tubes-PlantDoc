@@ -38,11 +38,7 @@
 
                                 {{-- untuk load komen                                 --}}
                                 @foreach($comment as $value_user)
-                                {{-- @php
-                                echo '<pre>';
-                                    print_r($value_user);
-                                    echo '</pre>';
-                                @endphp --}}
+                                
                                 <div class="card mb-3" style="min-width: 540px; max-width:82%;">
                                     <div class="row no-gutters">
                                       <div class="card-header">
@@ -53,12 +49,10 @@
                                             @if ( $value_user->id_user==1 || $value_user->id_user==3 )
                                             <h5 class="mt-0">{{$value_user->name}} <i class="icofont-check-circled" style="color:green;"></i></h5>
                                             <span >{{$value_user->email}}</span>  
-                                                
-                                            @elseif( $value_user->id_user==2 )
+                                            @else
                                             <h5 class="mt-0">{{$value_user->name}}</h5>
                                             <span >{{$value_user->email}}</span>  
-                                                
-                                            @endif
+                                            @endif                                                                                         
                                             @auth
                                             
                                             <form class="form-inline"action="{{route('deleteComment')}}" method="GET"> 
